@@ -14,6 +14,7 @@
 		9BA881A41CE9AFA3007E7715 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BA881A31CE9AFA3007E7715 /* Images.xcassets */; };
 		9BA881A71CE9AFA3007E7715 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BA881A51CE9AFA3007E7715 /* LaunchScreen.xib */; };
 		9BA881B31CE9AFA4007E7715 /* BackgroundFetchExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA881B21CE9AFA4007E7715 /* BackgroundFetchExampleTests.m */; };
+		9BA881BE1CE9C006007E7715 /* NewsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA881BD1CE9C006007E7715 /* NewsItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		9BA881AC1CE9AFA3007E7715 /* BackgroundFetchExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BackgroundFetchExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BA881B11CE9AFA4007E7715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BA881B21CE9AFA4007E7715 /* BackgroundFetchExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BackgroundFetchExampleTests.m; sourceTree = "<group>"; };
+		9BA881BC1CE9C006007E7715 /* NewsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsItem.h; sourceTree = "<group>"; };
+		9BA881BD1CE9C006007E7715 /* NewsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				9BA881A31CE9AFA3007E7715 /* Images.xcassets */,
 				9BA881A51CE9AFA3007E7715 /* LaunchScreen.xib */,
 				9BA881961CE9AFA2007E7715 /* Supporting Files */,
+				9BA881BC1CE9C006007E7715 /* NewsItem.h */,
+				9BA881BD1CE9C006007E7715 /* NewsItem.m */,
 			);
 			path = BackgroundFetchExample;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 				TargetAttributes = {
 					9BA881921CE9AFA2007E7715 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = CG8SJ8SLN5;
 					};
 					9BA881AB1CE9AFA3007E7715 = {
 						CreatedOnToolsVersion = 6.4;
@@ -220,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BA8819F1CE9AFA3007E7715 /* ViewController.m in Sources */,
+				9BA881BE1CE9C006007E7715 /* NewsItem.m in Sources */,
 				9BA8819C1CE9AFA3007E7715 /* AppDelegate.m in Sources */,
 				9BA881991CE9AFA3007E7715 /* main.m in Sources */,
 			);
@@ -347,9 +354,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Manju Sj (7BUQZCVVQD)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: Manju Sj (7BUQZCVVQD)";
 				INFOPLIST_FILE = BackgroundFetchExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "197c5403-dde7-4665-ae10-ad175a39e854";
 			};
 			name = Debug;
 		};
@@ -357,9 +367,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Manju Sj (7BUQZCVVQD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Manju Sj (7BUQZCVVQD)";
 				INFOPLIST_FILE = BackgroundFetchExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "197c5403-dde7-4665-ae10-ad175a39e854";
 			};
 			name = Release;
 		};

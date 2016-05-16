@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@property(nonatomic,strong)UITableView *bTableView;
+@property (nonatomic, weak) NSArray *allNewsItems;
+@property (nonatomic, unsafe_unretained) BOOL mustReloadView;
 
 
 @end

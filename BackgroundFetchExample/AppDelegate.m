@@ -7,13 +7,56 @@
 //
 
 #import "AppDelegate.h"
-
+#import "NewsItem.h"
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
+- (NSMutableArray *) allNewsItems{
+    if (_allNewsItems == nil){
+        _allNewsItems = [[NSMutableArray alloc] init];
+        /* Pre-populate the array with one item */
+        NewsItem *item = [[NewsItem alloc] init];
+        item.date = [NSDate date];
+        item.text = [NSString stringWithFormat:@"News text 1"];
+        [_allNewsItems addObject:item];
+    }
+    return _allNewsItems;
+}
+- (void) fetchNewsItems:(BOOL *)paramFetchedNewItems{
+    if (arc4random_uniform(2) != 1){
+        if (paramFetchedNewItems != nil){
+            *paramFetchedNewItems = NO;
+        }
+        return;
+    }
+    [self willChangeValueForKey:@"allNewsItems"];
+    /* Generate a new item */
+    NewsItem *item = [[NewsItem alloc] init];
+    item.date = [NSDate date];
+    item.text = [NSString stringWithFormat:@"News text %lu",
+                 (unsigned long)self.allNewsItems.count + 1];
+    [self.allNewsItems addObject:item];
+    if (paramFetchedNewItems != nil){
+        *paramFetchedNewItems = YES;
+    }
+    [self didChangeValueForKey:@"allNewsItems"];
+}
+-(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    BOOL haveNewCount=NO;
+    if (haveNewCount) {
+        completionHandler(UIBackgroundFetchResultNewData);
+        
+    }else{
+        completionHandler(UIBackgroundFetchResultNoData);
+    
+    }
+
+
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
